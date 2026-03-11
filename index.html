@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Сколько стоит твоё выгорание?</title>
+<title>Сколько вы недозараатываете из-за низкого ресурса?</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -623,8 +623,8 @@
   <!-- HEADER -->
   <div class="header">
     <div class="label">Калькулятор потерь</div>
-    <h1>Сколько стоит<br>твоё <span>выгорание?</span></h1>
-    <p class="subtitle">7 вопросов. Реальные цифры. Ты увидишь, что теряешь каждый месяц — в рублях и часах.</p>
+    <h1>Сколько вы недозарабатываете<br>из-за <span>состояния?</span></h1>
+    <p class="subtitle">7 вопросов. Вы увидите, что можно терять каждый месяц — в рублях и часах.</p>
   </div>
 
   <!-- QUIZ -->
@@ -648,13 +648,13 @@
   <!-- RESULTS -->
   <div class="results" id="resultsSection">
     <div class="results-header">
-      <div class="label">Твой результат</div>
+      <div class="label">Ваш результат</div>
       <div class="results-title" id="resultsTitle"></div>
-      <div class="results-sub">Вот во что обходится твоё состояние каждый месяц</div>
+      <div class="results-sub">Вот во что обходится ваше состояние каждый месяц</div>
     </div>
 
     <div class="big-number-card">
-      <div class="big-label">Ты теряешь каждый месяц</div>
+      <div class="big-label">Вы теряете каждый месяц</div>
       <span class="big-value" id="totalLoss">0 ₽</span>
       <div class="big-period" id="yearlyLoss"></div>
     </div>
@@ -671,14 +671,14 @@
         <div class="metric-note">продуктивных часов сгорает впустую</div>
       </div>
       <div class="metric-card info">
-        <div class="metric-label">Цена 1 часа твоего времени</div>
+        <div class="metric-label">Цена 1 часа вашего времени</div>
         <div class="metric-value" id="hourCost">0 ₽</div>
-        <div class="metric-note">по твоим данным</div>
+        <div class="metric-note">по вашим данным</div>
       </div>
       <div class="metric-card warning">
         <div class="metric-label">КПД сейчас</div>
         <div class="metric-value" id="efficiency">0%</div>
-        <div class="metric-note">от твоего реального потенциала</div>
+        <div class="metric-note">от вашего реального потенциала</div>
       </div>
     </div>
 
@@ -705,7 +705,7 @@ const questions = [
   {
     id: 'revenue',
     number: '01',
-    text: 'Какая средняя выручка твоего бизнеса в месяц?',
+    text: 'Какая средняя выручка вашего бизнеса в месяц?',
     hint: 'Примерно — порядок цифры важнее точности',
     type: 'options',
     options: [
@@ -718,7 +718,7 @@ const questions = [
   {
     id: 'hours',
     number: '02',
-    text: 'Сколько часов в неделю ты реально работаешь?',
+    text: 'Сколько часов в неделю вы реально работаете?',
     hint: 'Включая вечера, выходные, "просто проверю телефон"',
     type: 'slider',
     min: 40, max: 100, default: 70,
@@ -728,8 +728,8 @@ const questions = [
   {
     id: 'sleep',
     number: '03',
-    text: 'Сколько часов ты в среднем спишь?',
-    hint: 'Честно — не "должен", а реально',
+    text: 'Сколько часов вы в среднем спите?',
+    hint: 'Честно — не "как бы должен +- так", а реально',
     type: 'slider',
     min: 3, max: 8, default: 5,
     unit: 'часов/ночь',
@@ -738,8 +738,8 @@ const questions = [
   {
     id: 'focus',
     number: '04',
-    text: 'Как ты оцениваешь свой фокус и качество решений сейчас?',
-    hint: 'Сравни с собой на пике формы',
+    text: 'Как вы оцениваете свой фокус и качество решений сейчас?',
+    hint: 'Сравни с собой на пике мотивации, когда хотелся газовать',
     type: 'options',
     options: [
       { label: 'Работаю чётко', value: 90, opt: '~90% от пика' },
@@ -751,8 +751,8 @@ const questions = [
   {
     id: 'mistakes',
     number: '05',
-    text: 'Как часто ты принимаешь решения, о которых потом жалеешь?',
-    hint: 'Срывы на команду, неверные наймы, отложенные сделки',
+    text: 'Как часто вы принимаете решения, о которых потом жалеешь?',
+    hint: 'Срывы на команду, импульсивные решения, отложенные сделки',
     type: 'options',
     options: [
       { label: 'Редко', value: 1 },
@@ -764,8 +764,8 @@ const questions = [
   {
     id: 'delegate',
     number: '06',
-    text: 'Сколько задач ты делаешь сам, потому что "некому доверить"?',
-    hint: 'Процент от твоего рабочего времени',
+    text: 'Сколько задач вы делаете сами, потому что "некому доверить"?',
+    hint: 'Процент от вашего рабочего времени',
     type: 'slider',
     min: 10, max: 90, default: 60,
     unit: '% времени',
@@ -774,7 +774,7 @@ const questions = [
   {
     id: 'burnout',
     number: '07',
-    text: 'Как долго ты уже в этом состоянии?',
+    text: 'Как долго вы уже в этом состоянии?',
     hint: 'На износе, без нормального восстановления',
     type: 'options',
     options: [
@@ -947,7 +947,7 @@ function showResults() {
 
   document.getElementById('resultsTitle').innerHTML = title;
   document.getElementById('totalLoss').textContent = formatMoney(c.total);
-  document.getElementById('yearlyLoss').textContent = `${formatMoney(yearly)} в год — это твои деньги, которых ты не видишь`;
+  document.getElementById('yearlyLoss').textContent = `${formatMoney(yearly)} в год — это ваши деньги, которых вы не видите`;
   document.getElementById('moneyLoss').textContent = formatMoney(c.totalMoney);
   document.getElementById('timeLoss').textContent = `${c.totalHours} ч`;
   document.getElementById('hourCost').textContent = formatMoney(c.hourRate);
@@ -977,15 +977,15 @@ function showResults() {
   let verdict = '';
   if (c.efficiency < 40) {
     verdict = `<div class="verdict-title">Диагноз честно</div>
-    <p class="verdict-text">Ты работаешь на <strong>${c.efficiency}% от своего реального потенциала</strong>. Это значит, что больше половины твоих усилий уходит в никуда — не потому что ты плохо стараешься, а потому что система сломана.<br><br>
-    За последние ${months} месяцев, пока ты в этом состоянии, потери составили примерно <strong>${formatMoney(totalLostAlready)}</strong>. Это не абстракция — это реальные деньги и решения, которых не было.</p>`;
+    <p class="verdict-text">Вы работаете на <strong>${c.efficiency}% от своего реального потенциала</strong>. Это значит, что больше половины ваших усилий уходит в никуда — не потому что вы плохо стараетесь, а потому что нет сил и времени думать стратегически.<br><br>
+    За последние ${months} месяцев, пока вы в этом состоянии, потери составили примерно <strong>${formatMoney(totalLostAlready)}</strong>. Это не абстракция — это реальные деньги и решения, которых не было.</p>`;
   } else if (c.efficiency < 65) {
     verdict = `<div class="verdict-title">Тревожная зона</div>
-    <p class="verdict-text">Ты ещё держишься, но работаешь на <strong>${c.efficiency}% мощности</strong>. Снаружи — норм. Внутри уже давно идёт износ.<br><br>
+    <p class="verdict-text">Вы ещё держитесь, но работаете на <strong>${c.efficiency}% мощности</strong>. Снаружи — норм. Внутри уже давно идёт износ.<br><br>
     За ${months} месяцев потери — <strong>${formatMoney(totalLostAlready)}</strong>. Эта цифра будет расти, пока ничего не изменится в системе.</p>`;
   } else {
-    verdict = `<div class="verdict-title">Ты держишься, но...</div>
-    <p class="verdict-text">Пока потери относительно контролируемые. Но при <strong>${c.efficiency}% эффективности</strong> и нынешнем режиме — ты движешься в сторону более тяжёлого состояния.<br><br>
+    verdict = `<div class="verdict-title">Вы держитесь, но...</div>
+    <p class="verdict-text">Пока потери относительно контролируемые. Но при <strong>${c.efficiency}% эффективности</strong> и нынешнем режиме — вы движетесь в сторону более тяжёлого состояния.<br><br>
     Лучший момент остановиться — до того, как тело скажет стоп само.</p>`;
   }
 
